@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ekim0480/project2#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express-handlebars": "^5.1.0"
   }
 }
