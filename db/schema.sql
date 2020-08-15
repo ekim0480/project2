@@ -6,7 +6,7 @@ DROP DATABASE IF EXISTS beer_db;
     
     CREATE TABLE `beers` (
     `id` INT AUTO_INCREMENT NOT NULL,
-    `beer_name` VARCHAR(#) NOT NULL,
-    `#` BOOLEAN NOT NULL,
+    `brewery_name` VARCHAR(60) NOT NULL,
+    `tried` BOOLEAN DEFAULT FALSE NOT NULL,
     PRIMARY KEY ( `id` )
     );
