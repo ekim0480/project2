@@ -9,7 +9,10 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      console.log("req.user1 "+ req.user)
+      // res.redirect("/members");
+      // res.redirect("/index");
+       res.redirect("/beersearch");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
@@ -17,7 +20,10 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      console.log("req.user2 "+ req.user)
+      // res.redirect("/members");
+      // res.redirect("/index");
+       res.redirect("/beersearch");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
