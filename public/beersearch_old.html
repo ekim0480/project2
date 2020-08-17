@@ -3,92 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The NXT1</title>
+    <title>New York Times Search</title>
     <!-- <link rel="stylesheet" type="text/css" href="nyt.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap" rel="stylesheet">
-
     <style>
-
-        /* .jumbotron {
+        .jumbotron {
     margin-left: 25px;
     margin-right: 25px;
     text-align: center;
     font-weight: bold;
     background-color: rgb(18, 18, 92) !important;;
     color: white;
-    } */
-
-    .container {
-        width: 60%;
-        height: 30%;
-        /* display: table; */
-        background-color: brown; 
-        margin-top: 5%;        
-    }
-
-    .container .image-container {
-        text-align: center;
-        vertical-align: middle;
-        display: table-cell;
-    }
-
-    .container .image-container img {
-        max-width: 100%;
-        max-height: 100%;        
-    }
-    
-    #h1 {
-        font-family: 'Raleway Dots', cursive;;
-        color: white;
-        
-    }
-    #body {
-        background-image: url(../project2/img/BackgroundIMG.PNG);
-    
-    }
 }
 
     </style>
 </head>
-<body id="body">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/logout">
-              Logout
-            </a>
-          </div>
-        </div>
-      </nav>
-
-
+<body>
     <header>
-        
-        <!-- <div class = "jumbotron jumbotron-fluid"> -->
+        <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                <h1 id="h1"><center>The Nxt One</center> </h1>
-                <div class="image-container">
-                    <!-- <img src="../project2/img/breweryHome.JPEG" alt="Beer image" /> -->
-                    <img src="../img/beer1.png" alt="Beer image" />
                 <h1 class="display-4">
-                    
+                    <h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> Brewery Search</h1>
                     <p class="lead"></p>
             </div>
         </div>
-    </div>
- <!-- </div> -->
- </div>
-</header>
- 
-
-
-
+    </header>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -97,34 +39,41 @@
                     <div class="card-body">
                         <div class="card-topper border-bottom">
                             <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i>
-                                Brewery Search</h5>
+                                Search Parameters</h5>
                         </div>
                         <!-- start of the form -->
                         <form>
                             <div class="form-group">
-                                <label for="searchfield">City:</label>
+                                <label for="searchfield">Search Term:</label>
                                 <input class="form-control" id="search-term" aria-describedby="searchfield">
+                                <!-- <label for="recordsretrieved">Number of Records to Retrieve</label>
+                                <input class="form-control" id="records" aria-describedby="recordsretrieved">
+                                <label for="startyr">Start Year (Optional):</label>
+                                <input class="form-control" id="start-year" aria-describedby="startyr">
+                                <label for="endyr">End Year (Optional):</label>
+                                <input class="form-control" id="end-year" aria-describedby="endyr"> -->
                             </div>
                             <!-- search button -->
                             <button id="searchBtn" class="btn btn-primary">
                                 <i class="fa fa-search" aria-hidden="true"></i> Search
                             </button>
-                        
+                            <!-- clear button -->
+                            <button id="searchBtn" class="btn btn-primary">
+                                <i class="fa fa-trash" aria-hidden="true"></i>Clear Results
+                            </button>
                         </form>
                     </div>
                 </div> <!-- end of card -->
             </div>
         </div> <!-- end of first row-->
-
-
-        <!-- third row-->
+        <!-- second row-->
         <div class="row">
             <div class="col-12">
                 <!-- second card -->
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i>
-                            Breweries: </h5>
+                            Top Articles</h5>
                         <div class="results"></div>
                     </div>
                 </div>
@@ -132,52 +81,6 @@
         </div>
     </div>
     </div>
-<!-- second search -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-topper border-bottom">
-                            <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i>
-                                Beer Search</h5>
-                        </div>
-                        <!-- start of the form -->
-                        <form>
-                            <div class="form-group">
-                                <label for="searchfield">City:</label>
-                                <input class="form-control" id="search-term" aria-describedby="searchfield">
-                            </div>
-                            <!-- search button -->
-                            <button id="searchBtn" class="btn btn-primary">
-                                <i class="fa fa-search" aria-hidden="true"></i> Search
-                            </button>
-                        
-                        </form>
-                    </div>
-                </div> <!-- end of card -->
-            </div>
-        </div> <!-- end of first row-->
-
- 
-        <!-- third row-->
-        <div class="row">
-            <div class="col-12">
-                <!-- second card -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i>
-                            Recommended beer: </h5>
-                        <div class="results"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
 
@@ -211,6 +114,6 @@
     
         
     </script>
-<!-- <script src="js/all.js" type="text/javascript"></script> -->
+
 </body>
 </html>
