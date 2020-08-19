@@ -1,24 +1,24 @@
 module.exports = function (sequelize, DataTypes) {
   var Beer = sequelize.define("Beer", {
-    //   EXAMPLE TO FOLLOW ONCE TABLE STRUCTURE IS DECIDED UPON
 
-    id: {
-       type: DataTypes.INTEGER,
+    user: {
+       type: DataTypes.TEXT,
        allowNull: false,
-       primaryKey: true,
-       autoIncrement: true
-  
+       validate: {
+         len: [1,30]
+       }
     },
     brewery_name: {
        type: DataTypes.TEXT,
        allowNull: false,
        validate: {
-         len: [5],
+         len: [1],
        },
      },
      tried: {
        type: DataTypes.BOOLEAN,
-       defaultValue: false,
+       allowNull: false,
+       defaultValue: false
      }
   });
   return Beer;

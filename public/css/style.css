@@ -2,3 +2,40 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+      /* .jumbotron {
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(18, 18, 92) !important;;
+  color: white;
+  } */
+
+  .container {
+    width: 60%;
+    height: 30%;
+    /* display: table; */
+    background-color: brown; 
+    margin-top: 5%;        
+}
+
+.container .image-container {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.container .image-container img {
+    max-width: 100%;
+    max-height: 100%;        
+}
+
+#h1 {
+    font-family: 'Raleway Dots', cursive;;
+    color: white;
+    
+}
+#body {
+    background-image: url(../project2/img/BackgroundIMG.PNG);
+}
