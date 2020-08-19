@@ -6,11 +6,9 @@
 
 var express = require("express");
 var session = require("express-session");
-<<<<<<< HEAD
 var exphbs  = require('express-handlebars');
-=======
 
->>>>>>> e1128595726cb1ea6c090ec5d9c3fe405ecf5e30
+
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
