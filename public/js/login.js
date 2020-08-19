@@ -30,7 +30,7 @@ $(document).ready(function() {
     })
       .then(function() {
         // window.location.replace("/members");
-        window.location.replace("beersearch")
+        window.location.replace("/beersearch")
         // If there's an error, log the error
       })
       .catch(function(err) {
