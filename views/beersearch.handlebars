@@ -15,30 +15,127 @@
 		
 	</div> <!-- header row -->
 
-	<div class="row orderup  text-center">
-		<input type="text" class="form-control" id="name" placeholder="My delicious burger is called..."><button type="submit" id="submit">Order up!</button>
-	</div> <!-- survey row -->
+	<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-topper border-bottom">
+                            <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i>
+                                Brewery Search</h5>
+                        </div>
+                        <!-- start of the form -->
+                        <form>
+                            <div class="form-group">
+                                <label for="searchfield">City:</label>
+                                <input class="form-control" id="search-term" aria-describedby="searchfield">
+                            </div>
+                            <!-- search button -->
+                            <button id="searchBtn" class="btn btn-primary">
+                                <i class="fa fa-search" aria-hidden="true"></i> Search
+                            </button>
+                        
+                        </form>
+                    </div>
+                </div> <!-- end of card -->
+            </div>
+        </div> <!-- end of first row-->
 
-	<div class="row"> <!-- burgers -->
-		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> <!-- left column -->
-			<h1 id="left">To Be Eaten...</h1>
-			{{#each burgers}}
-			{{#unless devoured}}
-			<div class="burgerblock">
-				<img src="./assets/img/burger.png" class="tinyicon burgericon"><img src="./assets/img/eat.png" class="tinyicon eaticon" data-id="{{this.id}}"><h2>{{burger_name}}</h2>
-			</div>
-			{{/unless}}
-			{{/each}}
-		</div> <!-- left column -->
 
-		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> <!-- right column -->
-			<h1 id="right">Already Devoured!</h1>
-			{{#each burgers}}
-			{{#if devoured}}
-			<div class="burgerblock">
-				<img src="./assets/img/burger.png" class="tinyicon burgericon eaten"><img src="./assets/img/waiter.png" class="tinyicon waitericon" data-id="{{this.id}}"><h2>{{burger_name}}</h2>
-			</div>
-			{{/if}}
-			{{/each}}
-		</div> <!-- right column -->
-	</div>
+        <!-- third row-->
+        <div class="row">
+            <div class="col-12">
+                <!-- second card -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            Breweries: </h5>
+                        <div class="results"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<!-- second search -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-topper border-bottom">
+                            <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i>
+                                Beer Search</h5>
+                        </div>
+                        <!-- start of the form -->
+                        <form>
+                            <div class="form-group">
+                                <label for="searchfield">City:</label>
+                                <input class="form-control" id="search-term" aria-describedby="searchfield">
+                            </div>
+                            <!-- search button -->
+                            <button id="searchBtn" class="btn btn-primary">
+                                <i class="fa fa-search" aria-hidden="true"></i> Search
+                            </button>
+                        
+                        </form>
+                    </div>
+                </div> <!-- end of card -->
+            </div>
+        </div> <!-- end of first row-->
+
+ 
+        <!-- third row-->
+        <div class="row">
+            <div class="col-12">
+                <!-- second card -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            Recommended beer: </h5>
+                        <div class="results"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+
+        $("#searchBtn").on("click", function(event) {
+                    event.preventDefault();
+                    var searchTerm = $("#search-term").val();
+                    console.log(searchTerm);
+      
+                    var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + searchTerm;
+
+                    console.log(queryURL);
+
+                    $.ajax({
+                        url: queryURL,
+                        method: 'GET'
+                    }).then (function(result) {
+                        console.log(result);
+                        //  var list = $("<ol>");
+
+                        //  for (var i = 0; i < numRecords; i++) {
+                        //      var headline = result.response.docs[i].headline.main;
+                        //      var author = result.response.docs[i].byline.original;
+                        //      var newItem = $("<li>").text(headline);
+                        //      var authorP = $("<p>").text(author);
+                        //      newItem.append(authorP);
+                        //      list.append(newItem);
+                        //      $(".results").append(list);
+                        //  }
+                     })
+        })
+    
+        
+    </script>
+<!-- <script src="js/all.js" type="text/javascript"></script> -->
+</body>
+</html>
