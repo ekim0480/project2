@@ -1,0 +1,31 @@
+{
+    "development": {
+      "username": "root",
+<<<<<<< HEAD
+      "password": "goku1234",
+=======
+      "password": "password",
+>>>>>>> e1128595726cb1ea6c090ec5d9c3fe405ecf5e30
+      "database": "beer_db",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "database_test",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": null,
+      "database": "database_production",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+    }
+  }
+  
