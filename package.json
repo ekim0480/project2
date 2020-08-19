@@ -21,7 +21,10 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
+<<<<<<< HEAD
+=======
     "express": "^4.17.1",
+>>>>>>> e1128595726cb1ea6c090ec5d9c3fe405ecf5e30
     "express-handlebars": "^5.1.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.1.0",
