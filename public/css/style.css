@@ -36,6 +36,11 @@ form.login {
     color: white;
     
 }
-#body {
-    background-image: url(../project2/img/BackgroundIMG.PNG);
+/* #body {
+    background-image: url();
+} */
+
+body {
+    background: url(../img/BackgroundIMG.PNG);
+    width: 100%;
 }
