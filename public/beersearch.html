@@ -50,7 +50,7 @@
         background-image: url(../project2/img/BackgroundIMG.PNG);
     
     }
-}
+
 
     </style>
 </head>
@@ -76,15 +76,11 @@
                 <div class="image-container">
                     <!-- <img src="../project2/img/breweryHome.JPEG" alt="Beer image" /> -->
                     <img src="../img/beer1.png" alt="Beer image" />
-                <h1 class="display-4">
-                    
+                    <h1 class="display-4"></h1>
                     <p class="lead"></p>
+                </div>
             </div>
-        </div>
-    </div>
- <!-- </div> -->
- </div>
-</header>
+    </header>
  
 
 
@@ -131,52 +127,50 @@
             </div>
         </div>
     </div>
-    </div>
-<!-- second search -->
+    <!-- second search -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
+    <!-- <div class="container"> -->
+        <!-- <div class="row"> -->
+            <!-- <div class="col-12"> -->
                 <!-- Card -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-topper border-bottom">
-                            <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i>
-                                Beer Search</h5>
-                        </div>
+                <!-- <div class="card"> -->
+                    <!-- <div class="card-body"> -->
+                        <!-- <div class="card-topper border-bottom"> -->
+                            <!-- <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i> -->
+                                <!-- Beer Search</h5> -->
+                        <!-- </div> -->
                         <!-- start of the form -->
-                        <form>
-                            <div class="form-group">
-                                <label for="searchfield">City:</label>
-                                <input class="form-control" id="search-term" aria-describedby="searchfield">
-                            </div>
+                        <!-- <form> -->
+                            <!-- <div class="form-group"> -->
+                                <!-- <label for="searchfield">City:</label> -->
+                                <!-- <input class="form-control" id="search-term" aria-describedby="searchfield"> -->
+                            <!-- </div> -->
                             <!-- search button -->
-                            <button id="searchBtn" class="btn btn-primary">
-                                <i class="fa fa-search" aria-hidden="true"></i> Search
-                            </button>
+                            <!-- <button id="searchBtn" class="btn btn-primary"> -->
+                                <!-- <i class="fa fa-search" aria-hidden="true"></i> Search -->
+                            <!-- </button> -->
                         
-                        </form>
-                    </div>
-                </div> <!-- end of card -->
-            </div>
-        </div> <!-- end of first row-->
+                        <!-- </form> -->
+                    <!-- </div> -->
+                <!-- </div> end of card -->
+            <!-- </div> -->
+        <!-- </div> end of first row -->
 
  
         <!-- third row-->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <!-- second card -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i>
-                            Recommended beer: </h5>
-                        <div class="results"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+                <!-- <div class="card"> -->
+                    <!-- <div class="card-body"> -->
+                        <!-- <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> -->
+                            <!-- Recommended beer: </h5> -->
+                        <!-- <div class="results"></div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> --> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
@@ -195,17 +189,21 @@
                         method: 'GET'
                     }).then (function(result) {
                         console.log(result);
-                        //  var list = $("<ol>");
+                          const list = $("<ol>");
 
-                        //  for (var i = 0; i < numRecords; i++) {
-                        //      var headline = result.response.docs[i].headline.main;
-                        //      var author = result.response.docs[i].byline.original;
-                        //      var newItem = $("<li>").text(headline);
-                        //      var authorP = $("<p>").text(author);
-                        //      newItem.append(authorP);
-                        //      list.append(newItem);
-                        //      $(".results").append(list);
-                        //  }
+                          for (let i = 0; i < result.length; i++) {
+                               var id = result[i].id;
+                               var name = result[i].name;
+                               var phone = result[i].phone; 
+                               var website = result[i].website_url;
+                               var newItem = $("<li>").text(name);
+                               var phoneP = $("<p>").text(phone);
+                               var webP = $("<p>").text(website);
+                               newItem.append(phoneP);
+                               newItem.append(webP);
+                               list.append(newItem);
+                               $(".results").append(list);
+                             }
                      })
         })
     
