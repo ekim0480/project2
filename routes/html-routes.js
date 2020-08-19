@@ -3,6 +3,7 @@ var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+const { runInNewContext } = require("vm");
 
 module.exports = function(app) {
 
@@ -35,6 +36,8 @@ module.exports = function(app) {
     
   // });
   app.get("/beersearch", isAuthenticated, function(req, res) {
+    // req.user
+    // res.render('search', {user: req.user})
     res.sendFile(path.join(__dirname, "../public/beersearch.html"));
   });
 };
