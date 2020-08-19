@@ -12,7 +12,7 @@ form.login {
   color: white;
   } */
 
-.container {
+  .container {
     width: 60%;
     height: 30%;
     /* display: table; */
@@ -37,5 +37,5 @@ form.login {
     
 }
 #body {
-    background-image: url(../img/BackgroundIMG.PNG);
+    background-image: url(../project2/img/BackgroundIMG.PNG);
 }
