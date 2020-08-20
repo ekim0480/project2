@@ -17,7 +17,8 @@ form.login {
     height: 30%;
     /* display: table; */
     background-color: brown; 
-    margin-top: 5%;        
+    margin-top: 5%; 
+    margin-bottom: 5%;       
 }
 
 .container .image-container {
@@ -45,4 +46,9 @@ body {
     width: 100%;
     background-repeat: repeat-y; repeat-x;
     background-size: 100%;
+    color: black;
+}
+
+button {
+border: black;
 }
