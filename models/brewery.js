@@ -10,16 +10,16 @@ module.exports = function (sequelize, DataTypes) {
     phone: {
       type: DataTypes.TEXT,
       allowNull: false,
-      validate: {
-        len: [1],
-      },
+      // validate: {
+      //   len: [1],
+      // },
     },
     website: {
       type: DataTypes.TEXT,
       allowNull: false,
-      validate: {
-        len: [1],
-      },
+      // validate: {
+      //   len: [1],
+      // },
     },
     tried: {
       type: DataTypes.BOOLEAN,
