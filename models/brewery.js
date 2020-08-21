@@ -1,25 +1,39 @@
 module.exports = function (sequelize, DataTypes) {
-  var Beer = sequelize.define("Beer", {
-
-    user: {
-       type: DataTypes.TEXT,
-       allowNull: false,
-       validate: {
-         len: [1,30]
-       }
+  var Brewery = sequelize.define("Brewery", {
+    name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1, 30],
+      },
     },
-    brewery_name: {
-       type: DataTypes.TEXT,
-       allowNull: false,
-       validate: {
-         len: [1],
-       },
-     },
-     tried: {
-       type: DataTypes.BOOLEAN,
-       allowNull: false,
-       defaultValue: false
-     }
+    phone: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
+    website: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
+    tried: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
   });
-  return Beer;
+
+  Brewery.associate = function (models) {
+    Brewery.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false,
+      },
+    });
+  };
+  return Brewery;
 };

@@ -2,6 +2,7 @@
 
 
 $(document).ready(function () {
+
    const user_id =  $("#user_id").text()
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
