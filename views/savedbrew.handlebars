@@ -21,16 +21,22 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-topper border-bottom">
-                            <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i>
+                            
                                 Saved Breweries</h5>
                         </div>
             {{!-- <div class="image-container">
                     <img src="img/breweryHome.JPEG" alt="Beer image" />
                 <h1 class="display-4"> --}}
-                    <div>
+                    <div> 
                       {{#each breweries}}
                         <p>{{this.dataValues.name}}</p>
+                  
+                        <p>{{this.dataValues.phone}}</p>
+
+                        <p>{{this.dataValues.website}}</p>
+                        <div class="card-topper border-bottom"></div>
                       {{/each}}
+                      <div class="card-topper border-bottom"></div>
                     </div>
                     <p class="lead"></p>
             </div>
