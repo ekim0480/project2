@@ -22,14 +22,15 @@ $(document).ready(function () {
        var newItem = $("<li>").text(name);
        var phoneP = $("<p>").text(phone);
        var webP = $("<p>").text(website);
-       var button = $('<button class="btn btn-success">Save</button>')
+       var button = $('<button class="btn btn-success float-right">Save</button>')
        // button.attr("data-index",id)
       
        // console.log(i);
+       newItem.append(button);
        newItem.append(phoneP);
        newItem.append(webP);
        // button.attr('data',i)
-       newItem.append(button);
+
        
        list.append(newItem);
        
@@ -45,7 +46,7 @@ $(document).ready(function () {
          var addBrewery = {
            name: result[i].name,
            phone: result[i].phone,
-           website: result[i].website_url,
+           website: result[i].website_url
          }
 
         $.ajax({
@@ -54,36 +55,19 @@ $(document).ready(function () {
           data: addBrewery
         })
        
-        // console.log(i);
-        newItem.append(phoneP);
-        newItem.append(webP);
-        // button.attr('data',i)
-        newItem.append(button);
+         // console.log("kurt")
+         // console.log(button.attr('data-index',id));
+         // console.log(result);
         
-        list.append(newItem);
-        
-        $(".results").append(list);
-         button.on("click", function (event) {
-        
-          // console.log($(this.name));
-          event.preventDefault();
-          console.log(i,result[i].name);
-          // console.log(login);
-          console.log(user_id);
-        
-          // console.log("kurt")
-          // console.log(button.attr('data-index',id));
-          // console.log(result);
-         
-        //  console.log(button.attr('data',i));
-        //  console.log(result[i].attributes.nodeValue)
-        })
-      }
-     
-    });
-   
-  });
- 
-   
+       //  console.log(button.attr('data',i));
+       //  console.log(result[i].attributes.nodeValue)
+       })
+     }
     
-  })
+   });
+  
+ });
+
+  
+   
+ })
