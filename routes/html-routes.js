@@ -1,5 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
+var db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -42,6 +43,17 @@ module.exports = function(app) {
   });
 
   app.get("/savedbrew", function(req, res){
-    res.render("savedbrew");
+    
+      db.Brewery.findAll({
+        where: {
+          UserId: req.user.id
+        }
+      })
+        .then(function(myBreweries) {
+          console.log(myBreweries)
+          res.render("savedbrew", {breweries: myBreweries});
+        })
+        // Insert .catch whenever we have asynchronous, heroku will complain otherwise
+        // .catch
   });
 };

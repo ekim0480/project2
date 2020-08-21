@@ -17,11 +17,11 @@ $(document).ready(function () {
      for (let i = 0; i < result.length; i++) {
        var id = result[i].id;
        var name = result[i].name;
-       var phone = result[i].phone;
+       var phone = "Phone:  " + result[i].phone;
        var website = result[i].website_url;
        var newItem = $("<li>").text(name);
-       var phoneP = $("<p>").text(phone);
-       var webP = $("<p>").text(website);
+       var phoneP = $('<p class="phoneNum">').text(phone);
+       var webP = $('<a>').text(website);
        var button = $('<button class="btn btn-success float-right">Save</button>')
        // button.attr("data-index",id)
       
