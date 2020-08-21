@@ -47,18 +47,30 @@ module.exports = function(app) {
     }
   });
 
-    // POST route for saving a new brewery
-    app.post("/api/breweries", function(req, res) {
-      console.log(req.body);
-      console.log(req.user)
-      db.Brewery.create({
-        name: req.body.name,
-        phone: req.body.phone,
-        website: req.body.website,
+  // POST route for saving a new brewery
+  app.post("/api/breweries", function(req, res) {
+    console.log(req.body);
+    console.log(req.user)
+    db.Brewery.create({
+      name: req.body.name,
+      phone: req.body.phone,
+      website: req.body.website,
+      UserId: req.user.id
+    })
+      .then(function(addBrewery) {
+        res.json(addBrewery);
+      });
+  });
+
+  // Get route for returning posts of a specific category
+  app.get("/api/breweries", function(req, res) {
+    db.Brewery.findAll({
+      where: {
         UserId: req.user.id
-      })
-        .then(function(addBrewery) {
-          res.json(addBrewery);
-        });
-    });
+      }
+    })
+      .then(function(myBreweries) {
+        res.json(myBreweries);
+      });
+  });
 };
