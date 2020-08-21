@@ -54,19 +54,36 @@ $(document).ready(function () {
           data: addBrewery
         })
        
-         // console.log("kurt")
-         // console.log(button.attr('data-index',id));
-         // console.log(result);
+        // console.log(i);
+        newItem.append(phoneP);
+        newItem.append(webP);
+        // button.attr('data',i)
+        newItem.append(button);
         
-       //  console.log(button.attr('data',i));
-       //  console.log(result[i].attributes.nodeValue)
-       })
-     }
-    
-   });
-  
- });
-
-  
+        list.append(newItem);
+        
+        $(".results").append(list);
+         button.on("click", function (event) {
+        
+          // console.log($(this.name));
+          event.preventDefault();
+          console.log(i,result[i].name);
+          // console.log(login);
+          console.log(user_id);
+        
+          // console.log("kurt")
+          // console.log(button.attr('data-index',id));
+          // console.log(result);
+         
+        //  console.log(button.attr('data',i));
+        //  console.log(result[i].attributes.nodeValue)
+        })
+      }
+     
+    });
    
- })
+  });
+ 
+   
+    
+  })
