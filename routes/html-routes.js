@@ -38,6 +38,10 @@ module.exports = function(app) {
   app.get("/beersearch", isAuthenticated, function(req, res) {
     // req.user
     // res.render('search', {user: req.user})
-    res.render("beersearch")
+    res.render("beersearch", {user:req.user})
+  });
+
+  app.get("/savedbrew", function(req, res){
+    res.render("savedbrew");
   });
 };
