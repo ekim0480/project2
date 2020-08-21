@@ -52,3 +52,7 @@ body {
 button {
 border: black;
 }
+
+.breweryName {
+    font-weight: bold;
+}

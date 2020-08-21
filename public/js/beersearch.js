@@ -19,9 +19,10 @@ $(document).ready(function () {
        var name = result[i].name;
        var phone = "Phone:  " + result[i].phone;
        var website = result[i].website_url;
-       var newItem = $("<li>").text(name);
+       var newItem = $('<li class="breweryName">').text(name);
        var phoneP = $('<p class="phoneNum">').text(phone);
        var webP = $('<a>').text(website);
+       webP.attr("href", result[i].website_url);
        var button = $('<button class="btn btn-success float-right">Save</button>')
        // button.attr("data-index",id)
       
@@ -39,6 +40,7 @@ $(document).ready(function () {
        
          // console.log($(this.name));
          event.preventDefault();
+         $(this).prop("disabled", true);
          console.log(i,result[i].name);
          // console.log(login);
          console.log(user_id);
