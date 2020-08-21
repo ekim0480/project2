@@ -40,4 +40,8 @@ module.exports = function(app) {
     // res.render('search', {user: req.user})
     res.render("beersearch", {user:req.user})
   });
+
+  app.get("/savedbrew", function(req, res){
+    res.render("savedbrew");
+  });
 };
