@@ -12,49 +12,49 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the posts
-  app.get("/api/posts/", function(req, res) {
-    db.Post.findAll({})
-      .then(function(dbPost) {
-        res.json(dbPost);
+  // GET route for getting all of the breweries
+  app.get("/api/breweries/", function(req, res) {
+    db.Brewery.findAll({})
+      .then(function(breweryAll) {
+        res.json(breweryAll);
       });
   });
 
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
-    db.Post.findAll({
-      where: {
-        category: req.params.category
-      }
-    })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
-  });
+  // // Get route for returning posts of a specific category
+  // app.get("/api/posts/category/:category", function(req, res) {
+  //   db.Post.findAll({
+  //     where: {
+  //       category: req.params.category
+  //     }
+  //   })
+  //     .then(function(dbPost) {
+  //       res.json(dbPost);
+  //     });
+  // });
 
-  // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-    db.Post.findOne({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
-  });
+  // // Get route for retrieving a single post
+  // app.get("/api/posts/:id", function(req, res) {
+  //   db.Post.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //     .then(function(dbPost) {
+  //       res.json(dbPost);
+  //     });
+  // });
 
-  // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
+  // POST route for saving a new brewery
+  app.post("/api/breweries", function(req, res) {
     console.log(req.body);
-    db.Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      category: req.body.category
-    })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
+  //   db.Brewery.create({
+  //     // name: req.body.
+  //     // phone: req.body.body,
+  //     // website: req.body.category
+  //   })
+  //     .then(function(addBrewery) {
+  //       res.json(addBrewery);
+  //     });
   });
 
   // DELETE route for deleting posts

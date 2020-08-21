@@ -41,6 +41,18 @@ $(document).ready(function () {
          console.log(i,result[i].name);
          // console.log(login);
          console.log(user_id);
+
+         var addBrewery = {
+           name: result[i].name,
+           phone: result[i].phone,
+           website: result[i].website_url,
+         }
+
+        $.ajax({
+          type: "POST",
+          url: "api/breweries",
+          data: addBrewery
+        })
        
          // console.log("kurt")
          // console.log(button.attr('data-index',id));
