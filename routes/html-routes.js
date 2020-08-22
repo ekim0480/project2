@@ -54,6 +54,8 @@ module.exports = function(app) {
           res.render("savedbrew", {breweries: myBreweries});
         })
         // Insert .catch whenever we have asynchronous, heroku will complain otherwise
-        // .catch
+        .catch(function() {
+          alert("error")
+        })
   });
 };
