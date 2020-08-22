@@ -40,6 +40,7 @@ $(document).ready(function () {
        
          // console.log($(this.name));
          event.preventDefault();
+         alert("Brewery saved!");
          $(this).prop("disabled", true);
          console.log(i,result[i].name);
          // console.log(login);
