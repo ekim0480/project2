@@ -47,7 +47,6 @@ body {
     background-repeat: repeat-y repeat-x;
     background-size: 100%;
     color: black;
-    font-display: center;
 }
 
 button {
@@ -55,10 +54,10 @@ border: black;
 }
 
 .breweryName {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .card {
-margin-bottom: 5%;
-margin-top: 5%;
-}
+    margin-bottom: 5%;
+    margin-top: 5%;
+} 
