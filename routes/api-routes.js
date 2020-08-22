@@ -49,8 +49,6 @@ module.exports = function(app) {
 
   // POST route for saving a new brewery
   app.post("/api/breweries", function(req, res) {
-    console.log(req.body);
-    console.log(req.user)
     db.Brewery.create({
       name: req.body.name,
       phone: req.body.phone,
@@ -63,27 +61,27 @@ module.exports = function(app) {
   });
 
   // Get route for returning posts of a specific category
-  app.get("/api/breweries", function(req, res) {
-    db.Brewery.findAll({
-      where: {
-        UserId: req.user.id
-      }
-    })
-      .then(function(myBreweries) {
-        res.json(myBreweries);
-      });
-  });
+  // app.get("/api/breweries", function(req, res) {
+  //   db.Brewery.findAll({
+  //     where: {
+  //       UserId: req.user.id
+  //     }
+  //   })
+  //     .then(function(myBreweries) {
+  //       res.json(myBreweries);
+  //     });
+  // });
 
   // DELETE route for deleting posts
-  app.delete("/api/breweries", function(req, res) {
-    db.Brewery.destroy({
-      where: {
-        UserId: req.user.id,
-        name: req.body.name
-      }
-    })
-      .then(function(deleteBrewery) {
-        res.json(deleteBrewery);
-      });
-  });
+  // app.delete("/api/breweries/:id", function(req, res) {
+  //   db.Brewery.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //     .then(function(deleteBrewery) {
+  //       res.json(deleteBrewery);
+  //     });
+  // });
+ 
 };
