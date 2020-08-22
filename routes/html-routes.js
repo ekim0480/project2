@@ -17,8 +17,9 @@ module.exports = function(app) {
        res.redirect("/beersearch");
     }
     res.render("signup")
-    .catch(function() {
-      alert("error")
+    // .catch(function() {
+    //   console.log("catch");
+    // })
   });
 
   app.get("/login", function(req, res) {
@@ -31,7 +32,8 @@ module.exports = function(app) {
     }
     res.render("login")
     .catch(function() {
-      alert("error")
+      console.log("catch");
+    })
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -44,8 +46,6 @@ module.exports = function(app) {
     // req.user
     // res.render('search', {user: req.user})
     res.render("beersearch", {user:req.user})
-    .catch(function() {
-      alert("error")
   });
 
   app.get("/savedbrew", function(req, res){
@@ -61,7 +61,7 @@ module.exports = function(app) {
         })
         // Insert .catch whenever we have asynchronous, heroku will complain otherwise
         .catch(function() {
-          alert("error")
+          console.log("catch");
         })
   });
-};
+}
