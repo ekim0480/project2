@@ -55,7 +55,7 @@ border: black;
 
 .breweryName {
     font-weight: bolder;
-    border-style: solid;
+    /* border-style: solid; */
     list-style-type: none;
     margin-bottom: 5px;
 }

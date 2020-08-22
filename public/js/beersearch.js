@@ -19,7 +19,7 @@ $(document).ready(function () {
        var name = result[i].name;
        var phone = "Phone:  " + result[i].phone.substring(0,3) + "-" + result[i].phone.substring(3,6) + "-"+ result[i].phone.substring(6,10);
        var website = result[i].website_url;
-       var newItem = $('<li class="breweryName">').text(name);
+       var newItem = $('<li class="breweryName list-group-item">').text(name);
        var phoneP = $('<p class="phoneNum">').text(phone);
        var webP = $('<a>').text(website);
        webP.attr("href", result[i].website_url);
