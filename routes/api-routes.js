@@ -73,4 +73,17 @@ module.exports = function(app) {
         res.json(myBreweries);
       });
   });
+
+  // DELETE route for deleting posts
+  app.delete("/api/breweries", function(req, res) {
+    db.Brewery.destroy({
+      where: {
+        UserId: req.user.id,
+        name: req.body.name
+      }
+    })
+      .then(function(deleteBrewery) {
+        res.json(deleteBrewery);
+      });
+  });
 };
