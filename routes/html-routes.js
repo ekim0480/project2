@@ -31,9 +31,6 @@ module.exports = function(app) {
        res.redirect("/beersearch");
     }
     res.render("login")
-    .catch(function() {
-      console.log("catch");
-    })
   });
 
   // Here we've add our isAuthenticated middleware to this route.
