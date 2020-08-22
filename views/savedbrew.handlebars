@@ -31,16 +31,20 @@
             {{!-- <div class="image-container">
                     <img src="img/breweryHome.JPEG" alt="Beer image" />
                 <h1 class="display-4"> --}}
-                    <div> 
+                    <div id="savedBreweries" class="list-group"> 
                       {{#each breweries}}
+                      <div class="list-group-item">
                         <p>{{this.dataValues.name}}</p>
                   
                         <p>{{this.dataValues.phone}}</p>
 
                         <p>{{this.dataValues.website}}</p>
+                        
                         <div class="card-topper border-bottom"></div>
+                        </div>
                       {{/each}}
                       <div class="card-topper border-bottom"></div>
+                      
                     </div>
                     <p class="lead"></p>
             </div>
@@ -60,8 +64,8 @@
                                 Saved Breweries</h5>
                         </div> --}}
                         
-    <script type="text/javascript" src="js/beersearch.js"></script>
-
+    <script type="text/javascript" src="js/savedbeer.js"></script>
+ 
         
     
         
