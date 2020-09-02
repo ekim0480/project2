@@ -7,6 +7,7 @@
 var express = require("express");
 var session = require("express-session");
 var exphbs  = require("express-handlebars");
+var compression = require('compression')
 // var bodyParse = require("body-parse");
 
 
@@ -22,6 +23,8 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 // Requiring our models for syncing
 var db = require("./models");
+
+app.use(compression())
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
